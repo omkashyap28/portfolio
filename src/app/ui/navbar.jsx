@@ -21,7 +21,7 @@ export default function Navbar() {
   }, [navbarToggle])
 
   return (
-    <header className="sticky top-0 w-full py-3 mt-3 bg-gray-0 rounded-md bg-neutral-100/96">
+    <header className="sticky top-0 w-full py-3 mt-3 bg-gray-0 bg-neutral-100/96">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center gap-1">
@@ -76,7 +76,7 @@ export default function Navbar() {
       )}>
         <button
           onClick={toogleNavbar}
-          className="absolute top-6 right-8 flex justify-center items-center h-6 w-6">
+          className="fixed top-6 right-8 h-6 w-6">
           <div className="absolute h-0.5 w-5 bg-neutral-100 rotate-45"></div>
           <div className="absolute h-0.5 w-5 bg-neutral-100 -rotate-45" ></div>
         </button>

@@ -1,3 +1,5 @@
+import { FaReact } from "react-icons/fa6";
+
 export const navbarLinks = [
   {
     title: "home",
@@ -17,56 +19,53 @@ export const techStacks = [
   {
     id: 1,
     name: "REACTJS",
-    url: ""
+    url: "<FaRecact />",
   },
   {
     id: 2,
     name: "NEXTJS",
-    url: ""
+    url: "",
   },
   {
     id: 3,
     name: "TAILWINDCSS",
-    url: ""
+    url: "",
   },
   {
     id: 4,
     name: "GSAP",
-    url: ""
+    url: "",
   },
   {
     id: 5,
     name: "MOTION",
-    url: ""
+    url: "",
   },
   {
     id: 6,
     name: "BARBAJS",
-    url: ""
+    url: "",
   },
-  { id: 7,
-    name: "FIGMA",
-    url: ""
-  },
+  { id: 7, name: "FIGMA", url: "" },
   {
     id: 8,
     name: "MATERIAL UI",
-    url: ""
+    url: "",
   },
   {
     id: 9,
     name: "SHAD CN",
-    url: ""
+    url: "",
   },
   {
     id: 10,
     name: "GITHUB",
-    url: ""
+    url: "",
   },
   {
     id: 11,
     name: "REACT HOOK FORM",
-    url: ""
+    url: "",
   },
 ];
 
@@ -103,10 +102,4 @@ export const additionalTechStacks = [
   },
 ];
 
-export const tagLines = [
-  "Stand alone",
-  "Attractive",
-  "Clean",
-  "Unforgateble",
-  
-]
+export const tagLines = ["Stand alone", "Attractive", "Clean", "Unforgateble"];

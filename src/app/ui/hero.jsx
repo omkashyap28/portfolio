@@ -25,16 +25,16 @@ export default function Hero() {
         </div>
 
         <div className="my-5 flex items-center gap-5">
-          <Link className="text-2xl text-neutral-800 social-links" href="">
+          <Link className="text-2xl text-neutral-800 social-links " target="black" href="https://www.instagram.com/omkashyap7484">
             <FaInstagram />
           </Link>
-          <Link className="text-2xl text-neutral-800 social-links" href="">
+          <Link className="text-2xl text-neutral-800 social-links" target="black" href="https://www.linkedin.com/in/hari-om-kashyap-b176b63a5">
             <FaLinkedinIn />
           </Link>
-          <Link className="text-2xl text-neutral-800 social-links" href="">
+          <Link className="text-2xl text-neutral-800 social-links" target="black" href="https://x.com/om_kashyap28">
             <FaXTwitter />
           </Link>
-          <Link className="text-2xl text-neutral-800 social-links" href="">
+          <Link className="text-2xl text-neutral-800 social-links" target="black" href="https://github.com/omkashyap28">
             <FaGithub />
           </Link>
         </div>
@@ -47,7 +47,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 w-full py-3">
               {
                 techStacks.map(({ id, name, url }) => (
-                  <div className="h-8 w-8 rounded-md bg-gray-500" key={id}></div>
+                  <div className="h-8 w-8 rounded-md bg-gray-500" key={id} id={name}></div>
                 ))
               }
             </div>
@@ -58,13 +58,13 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 w-full py-3">
             {
               additionalTechStacks.map(({ id, name, url }) => (
-                <div className="relative group h-8 w-8 rounded-md bg-gray-500" key={id}></div>
+                <div className="relative group h-8 w-8 rounded-md bg-gray-500" key={id} id={name}></div>
               ))
             }
           </div>
         </div>
         <div className="w-full mt-6">
-          <GitHubCalendar blockSize={16} errorMessage="" colorScheme="dark" blockRadius={2} blockMargin={3} username="omkashyap28" />
+          <GitHubCalendar blockSize={17} errorMessage="" colorScheme="light" blockRadius={2} blockMargin={4} showWeekdayLabels={true} showColorLegend={true} username="omkashyap28" />
         </div>
       </div>
     </div>

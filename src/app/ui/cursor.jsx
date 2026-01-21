@@ -2,11 +2,11 @@
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import clsx from "clsx";
 
 export default function Cursor() {
   useGSAP(() => {
     const handleMouseMove = (e) => {
+      console.log(e.target.classList.contains("social-links"))
       const { clientX, clientY } = e;
       gsap.to("#cursor", {
         x: clientX,
@@ -15,9 +15,12 @@ export default function Cursor() {
       });
     };
     window.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("touchmove", handleMouseMove)
     // Cleanup on unmount
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      // window.removeEventListener("touchmove", handleMouseMove);
+
     };
   }, []);
 
