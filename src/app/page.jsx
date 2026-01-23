@@ -1,4 +1,4 @@
-import { Footer, Hero, Projects, About, Other, Cta } from "./ui";
+import { Hero, Projects, About, Other, Cta } from "./ui";
 
 export default function Home() {
   return (

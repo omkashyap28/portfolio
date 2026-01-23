@@ -1,24 +1,64 @@
+"use client";
+
 import Link from "next/link";
 import { techStacks, additionalTechStacks } from "../../../constants";
 import { FaInstagram, FaLinkedinIn, FaXTwitter, FaGithub, FaEnvelope, FaPaperPlane, FaLink } from "react-icons/fa6"
 import { Heading2, Heading3 } from "../components";
 import Image from "next/image"
+import { useId } from "react";
+import Typing from "../components/Typing";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
+
 
 export default function Hero() {
+
+  const heading1 = useId();
+  const heading3 = useId();
+  const p = useId();
+
+  useGSAP(() => {
+    gsap.registerPlugin(SplitText)
+    const paragraph = new SplitText(p, {
+      autoSplit: true
+    })
+    console.log(paragraph)
+
+
+
+    gsap.from(`#${heading3}`, {
+      y: 20,
+      filter: "blur(4px)",
+      opacity: 0,
+      duration: 0.6,
+    })
+    gsap.from(`#${heading1}`, {
+      y: 30,
+      filter: "blur(4px)",
+      opacity: 0,
+      duration: 0.9,
+    })
+    gsap.from(p, {
+      y: 40,
+      filter: "blur(4px)",
+      opacity: 0,
+      duration: 1.1,
+      stagger: 0.4,
+    })
+  }, [])
 
   return (
     <div className="h-full">
       <div className="mt-24 w-full">
         <div>
-          <Heading3 heading="Hey, I am Hariom Kashyap - Fullstack Developer" />
-          <h1 className="flex flex-wrap items-center gap-3 text-6xl tracking-tight text-shadow-sm text-neutral-900 my-1">
+          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" />
+          <h1 id={heading1} className="flex flex-wrap items-center gap-3 text-6xl tracking-tight text-shadow-sm text-neutral-900 my-1">
             I Make
-            <div className="overflow-hidden h-19 rounded-md bg-black ring-1 ring-black/40 shadow-lg text-neutral-100 px-4 py-2">
-              Stand alone
-            </div>
+            <Typing />
             Web Experiences
           </h1>
-          <p className="text-lg text-neutral-600 max-w-lg">
+          <p id={p} className="text-lg text-neutral-600 max-w-lg">
             A full-stack  web developer with strongly addicted for building high-quality, scalable applications.
           </p>
         </div>

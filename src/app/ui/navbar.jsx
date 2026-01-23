@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { navbarLinks } from "../../../constants";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import clsx from "clsx";
 import { FaPaperPlane } from "react-icons/fa6";
-import { getURL } from "next/dist/shared/lib/utils";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Navbar() {
 
@@ -16,6 +17,15 @@ export default function Navbar() {
   function toogleNavbar() {
     setNavbarToggle(toggle => !toggle)
   }
+
+  useGSAP(() => {
+    gsap.from("nav", {
+      y: 20,
+      duration: 0.7,
+      filter: "blur(5px)",
+      opacity: 0
+    })
+  }, [])
 
   useEffect(() => {
     window.document.body.style.overflow = navbarToggle ? "hidden" : "auto"
@@ -35,7 +45,7 @@ export default function Navbar() {
             />
           </div>
         </Link>
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-5 navlinks">
           {
             navbarLinks.map(({ title, slug }) => (
               <span key={title}
@@ -58,10 +68,10 @@ export default function Navbar() {
           }
           <span
             onClick={() => setActivePage("contact")}
-            className="rounded-md tracking-tight px-2 py-1.5 ml-4 bg-neutral-900 shadow-sm shadow-neutral-600/60 text-neutral-100">
+            className="rounded-md tracking-tight px-2 py-1.5 ml-4 bg-neutral-900 shadow-sm shadow-neutral-600/60 text-neutral-100 transition-all duration-200 hover:shadow-md hover:shadow-neutral-600/80">
             <Link href="/contact">
               <div className="flex items-center gap-2">
-                <FaPaperPlane />
+                <FaPaperPlane id="paper-plane" />
                 Get in touch
               </div>
             </Link>
