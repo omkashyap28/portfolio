@@ -3,17 +3,20 @@ import "./globals.css";
 import { Container } from "./components";
 import { Navbar, Cursor } from "./ui";
 import { ReactLenis } from "lenis/react";
+import { Footer } from "./ui";
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 export const metadata = {
-  title: "Hariom Kashyap",
-  description: "",
+  title: "Hariom Kashyap - Full Stack web developer",
+  description: "I create scalable full stack applications for web",
 };
 
 export default function RootLayout({ children }) {
+
+
   return (
     <html lang="en">
       <body
@@ -21,11 +24,15 @@ export default function RootLayout({ children }) {
         className={`${inter.className} bg-neutral-100 antialiased selection:bg-neutral-900 selection:text-neutral-100`}
       >
         <>
-          <ReactLenis root />
+          <ReactLenis options={{
+            smoothWheel: true,
+            duration: 1,
+            easing: "easeOutExpo"
+          }} root />
           <Container>
             <Navbar />
-            <Cursor />
             {children}
+            <Footer />
           </Container>
         </>
       </body>

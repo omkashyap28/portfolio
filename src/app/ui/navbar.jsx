@@ -5,12 +5,13 @@ import { navbarLinks } from "../../../constants";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { FaPaperPlane } from "react-icons/fa6";
+import { getURL } from "next/dist/shared/lib/utils";
 
 export default function Navbar() {
 
   const [activePage, setActivePage] = useState("home");
   const [navbarToggle, setNavbarToggle] = useState(false);
-
 
   function toogleNavbar() {
     setNavbarToggle(toggle => !toggle)
@@ -21,7 +22,7 @@ export default function Navbar() {
   }, [navbarToggle])
 
   return (
-    <header className="sticky top-0 w-full py-3 mt-3 bg-gray-0 bg-neutral-100/96">
+    <header className="sticky top-0 z-999 w-full py-3 bg-gray-0 bg-neutral-100/96">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center gap-1">
@@ -44,8 +45,8 @@ export default function Navbar() {
                   className={clsx(
                     "text-[15px] capitalize tracking-tight font-medium",
                     {
-                      "text-neutral-900 underline": activePage === title,
-                      "text-neutral-500": activePage !== title,
+                      "text-neutral-800": activePage === title,
+                      "text-neutral-500": activePage !== title
                     }
                   )}
                   href={slug}
@@ -55,6 +56,16 @@ export default function Navbar() {
               </span>
             ))
           }
+          <span
+            onClick={() => setActivePage("contact")}
+            className="rounded-md tracking-tight px-2 py-1.5 ml-4 bg-neutral-900 shadow-sm shadow-neutral-600/60 text-neutral-100">
+            <Link href="/contact">
+              <div className="flex items-center gap-2">
+                <FaPaperPlane />
+                Get in touch
+              </div>
+            </Link>
+          </span>
         </div>
         <button
           className="flex md:hidden items-center justify-center flex-col relative w-6 h-6 p-1"
@@ -76,7 +87,7 @@ export default function Navbar() {
       )}>
         <button
           onClick={toogleNavbar}
-          className="fixed top-6 right-8 h-6 w-6">
+          className="absolute top-6 right-8 h-6 w-6">
           <div className="absolute h-0.5 w-5 bg-neutral-100 rotate-45"></div>
           <div className="absolute h-0.5 w-5 bg-neutral-100 -rotate-45" ></div>
         </button>
@@ -86,13 +97,7 @@ export default function Navbar() {
               onClick={() => setActivePage(title)}
             >
               <Link
-                className={clsx(
-                  "text-2xl capitalize tracking-tight font-medium",
-                  {
-                    "text-neutral-100": activePage === title,
-                    "text-neutral-500": activePage !== title,
-                  }
-                )}
+                className="text-2xl capitalize tracking-tight font-medium text-neutral-500"
                 href={slug}
               >
                 {title}
@@ -100,6 +105,16 @@ export default function Navbar() {
             </span>
           ))
         }
+        <span
+          onClick={() => setActivePage("contact")}
+          className="rounded-md tracking-tight px-2 py-1.5 text-2xl text-neutral-900 shadow-sm shadow-neutral-600/60 bg-neutral-100">
+          <Link href="/contact">
+            <div className="flex items-center gap-2">
+              <FaPaperPlane />
+              Get in touch
+            </div>
+          </Link>
+        </span>
       </div>
     </header >
   )

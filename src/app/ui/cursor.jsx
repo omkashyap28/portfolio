@@ -6,7 +6,6 @@ import { useGSAP } from "@gsap/react";
 export default function Cursor() {
   useGSAP(() => {
     const handleMouseMove = (e) => {
-      console.log(e.target.classList.contains("social-links"))
       const { clientX, clientY } = e;
       gsap.to("#cursor", {
         x: clientX,

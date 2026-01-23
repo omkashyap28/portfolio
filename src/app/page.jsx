@@ -1,4 +1,4 @@
-import { Contact, Footer, Hero, Projects } from "./ui";
+import { Footer, Hero, Projects, About, Other, Cta } from "./ui";
 import { Blur } from "./components";
 
 export default function Home() {
@@ -7,8 +7,9 @@ export default function Home() {
       <Hero />
       <Blur />
       <Projects />
-      <Contact />
-      <Footer />
+      <About />
+      <Other />
+      <Cta />
     </>
   )
 }

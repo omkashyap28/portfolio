@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import 'lenis/dist/lenis.css';
+
 button {
   cursor: pointer;
 }
