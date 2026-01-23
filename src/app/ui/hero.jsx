@@ -67,7 +67,7 @@ export default function Hero() {
                     </button>
 
                     <div
-                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2"
+                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-sm:hidden"
                     >
                       <div
                         className="relative p-2 bg-neutral-900 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]"
@@ -110,7 +110,7 @@ export default function Hero() {
                     </button>
 
                     <div
-                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2"
+                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-sm:hidden"
                     >
                       <div
                         className="relative p-2 bg-neutral-900 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]"

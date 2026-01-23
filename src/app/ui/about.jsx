@@ -29,10 +29,10 @@ export default function About() {
                     techStacks.map(({ id, name, url, src }) =>
                       <div className="tooltip-container inline-flex items-center relative group" key={id}>
                         <Link href={url} className="shadow-xs" key={id} id={name}>
-                          <Image src={src} alt={name} height={24} width={24} />
+                          <Image src={src} alt={name} height={28} width={28} />
                         </Link>
                         <span
-                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2"
+                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-sm:hidden"
                         >
                           {name}
                           <span
@@ -46,10 +46,10 @@ export default function About() {
                     additionalTechStacks.map(({ id, name, url, src }) =>
                       <div className="tooltip-container inline-flex items-center relative group" key={id}>
                         <Link href={url} className="shadow-xs" key={id} id={name}>
-                          <Image src={src} alt={name} height={24} width={24} />
+                          <Image src={src} alt={name} height={28} width={28} />
                         </Link>
                         <span
-                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2"
+                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-sm:hidden"
                         >
                           {name}
                           <span

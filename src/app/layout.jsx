@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Container } from "./components";
+import { Blur, Container } from "./components";
 import { Navbar, Cursor } from "./ui";
 import { ReactLenis } from "lenis/react";
 import { Footer } from "./ui";
@@ -32,6 +32,7 @@ export default function RootLayout({ children }) {
           <Container>
             <Navbar />
             {children}
+            <Blur />
             <Footer />
           </Container>
         </>

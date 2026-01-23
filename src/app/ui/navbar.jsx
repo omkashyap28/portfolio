@@ -105,16 +105,6 @@ export default function Navbar() {
             </span>
           ))
         }
-        <span
-          onClick={() => setActivePage("contact")}
-          className="rounded-md tracking-tight px-2 py-1.5 text-2xl text-neutral-900 shadow-sm shadow-neutral-600/60 bg-neutral-100">
-          <Link href="/contact">
-            <div className="flex items-center gap-2">
-              <FaPaperPlane />
-              Get in touch
-            </div>
-          </Link>
-        </span>
       </div>
     </header >
   )
