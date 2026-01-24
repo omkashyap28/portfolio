@@ -32,7 +32,7 @@ export default function Navbar() {
   }, [navbarToggle])
 
   return (
-    <header className="sticky top-0 z-999 w-full py-3 bg-gray-0 bg-neutral-100/96">
+    <header className="sticky top-0 z-999 w-full py-3 bg-gray-0 bg-neutral-100/80">
       <nav className="flex justify-between items-center">
         <Link href="/">
           <div className="flex items-center gap-1">
@@ -71,7 +71,7 @@ export default function Navbar() {
             className="rounded-md tracking-tight px-2 py-1.5 ml-4 bg-neutral-900 shadow-sm shadow-neutral-600/60 text-neutral-100 transition-all duration-200 hover:shadow-md hover:shadow-neutral-600/80">
             <Link href="/contact">
               <div className="flex items-center gap-2">
-                <FaPaperPlane id="paper-plane" />
+                <FaPaperPlane />
                 Get in touch
               </div>
             </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
 
       </nav >
       <div className={clsx(
-        "fixed z-9999 flex flex-col gap-6 justify-center items-center top-0 h-screen w-full bg-black text-neutral-100 transform duration-400 p-4",
+        "fixed z-9999 flex flex-col gap-6 justify-center items-center top-0 h-screen w-screen bg-black text-neutral-100 transform duration-400 p-4 md:hidden",
         {
           "right-0": navbarToggle,
           "-right-full": !navbarToggle
