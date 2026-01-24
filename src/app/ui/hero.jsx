@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { techStacks, additionalTechStacks } from "../../../constants";
-import { FaInstagram, FaLinkedinIn, FaXTwitter, FaGithub, FaEnvelope, FaPaperPlane, FaLink } from "react-icons/fa6"
+import { FaPaperPlane, FaLink } from "react-icons/fa6"
 import { Heading2, Heading3, Typing } from "../components";
 import Image from "next/image"
 import { useId } from "react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { gsap, useGSAP, SplitText } from "../gsap-config";
+import { EmailIcon, FigmaIcon, GithubIcon, InstagramIcon, LinkedInIcon, TwitterXIcon } from "../icons";
 
 export default function Hero() {
 
@@ -17,35 +16,45 @@ export default function Hero() {
   const p = useId();
   const socialLinks = useId();
   const ctaBtn = useId();
+  const techStacksId = useId();
 
   useGSAP(() => {
     const tl = gsap.timeline()
-    const paragraph = new SplitText("p", { type: "chars, lines" })
+    const paragraph = new SplitText(`#${p}`, { type: "chars, lines" })
     tl.from(`#${heading3}`, {
       y: 20,
       filter: "blur(4px)",
       opacity: 0,
-      duration: 0.5,
-    })
-    tl.from(`#${heading1}`, {
-      y: 30,
-      filter: "blur(4px)",
-      opacity: 0,
-      duration: 0.7,
-    })
-    tl.from(paragraph.lines, {
-      y: 30,
-      filter: "blur(3px)",
-      opacity: 0,
-      duration: 0.9,
-      stagger: 0.3,
-    })
-    tl.from([`#${socialLinks}`, `#${ctaBtn}`], {
-      y: 30,
-      filter: "blur(3px)",
-      opacity: 0,
       duration: 0.6,
-    }, "<")
+      ease: "expo"
+    })
+      .from(`#${heading1}`, {
+        y: 30,
+        filter: "blur(4px)",
+        opacity: 0,
+        duration: 0.7,
+        ease: "expo"
+      })
+      .from(paragraph.lines, {
+        y: 30,
+        filter: "blur(3px)",
+        opacity: 0,
+        duration: 0.4,
+        stagger: 0.07,
+        ease: "expo"
+      })
+      .from([`#${socialLinks}`, `#${ctaBtn}`], {
+        y: 30,
+        filter: "blur(3px)",
+        opacity: 0,
+        duration: 0.6,
+        ease: "expo"
+      }, "<")
+      .from(`#${techStacksId}`, {
+        y: 10,
+        opacity: 0,
+        duration: 0.8
+      }, "<")
 
     return () => {
       paragraph.revert();
@@ -56,13 +65,13 @@ export default function Hero() {
     <div className="h-full">
       <div className="mt-24 w-full">
         <div>
-          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" className="bg-clip-text text-transparent bg-linear-to-tr from-neutral-900 to-neutral-300" />
-          <h1 id={heading1} className="flex flex-wrap items-center gap-3 text-[14vw] sm:text-6xl tracking-tight text-shadow-sm text-neutral-900 my-1">
+          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" className="bg-clip-text text-transparent bg-linear-to-t from-neutral-900 to-neutral-600 text-shadow-sm" />
+          <h1 id={heading1} className="flex flex-wrap flex-col sm:items-center sm:flex-row items-start sm:gap-3 text-[11vw] sm:text-6xl tracking-tight text-shadow-sm text-neutral-900">
             I Make
             <Typing />
             Web Experiences
           </h1>
-          <p id={p} className="text-lg text-neutral-600 max-w-lg">
+          <p id={p} className="mt-4 text-lg tracking-tight text-neutral-700 max-w-lg">
             A full-stack  web developer with strongly addicted for building high-quality, scalable applications.
           </p>
         </div>
@@ -77,25 +86,28 @@ export default function Hero() {
             </div>
           </Link>
         </div>
-        <div id={socialLinks} className="my-5 flex items-center gap-5">
+        <div id={socialLinks} className="mb-5 mt-6 sm:mt-12 flex items-center gap-5">
           <Link className="text-2xl text-neutral-600 social-links " target="black" href="https://www.instagram.com/omkashyap7484">
-            <FaInstagram />
+            <InstagramIcon />
           </Link>
           <Link className="text-2xl text-neutral-600 social-links" target="black" href="https://www.linkedin.com/in/hari-om-kashyap-b176b63a5">
-            <FaLinkedinIn />
+            <LinkedInIcon />
           </Link>
           <Link className="text-2xl text-neutral-600 social-links" target="black" href="https://x.com/om_kashyap28">
-            <FaXTwitter />
+            <TwitterXIcon />
           </Link>
           <Link className="text-2xl text-neutral-600 social-links" target="black" href="https://github.com/omkashyap28">
-            <FaGithub />
+            <GithubIcon />
           </Link>
           <Link className="text-2xl text-neutral-600 social-links" target="black" href="mailto:omkashyap6870@gmail.com">
-            <FaEnvelope />
+            <EmailIcon />
+          </Link>
+          <Link className="text-2xl text-neutral-600 social-links" target="black" href="https://www.figma.com/@hariom7">
+            <FigmaIcon />
           </Link>
         </div>
 
-        <div className="mt-10">
+        <div id={techStacksId} className="mt-10">
           <Heading2 heading="Tech Stacks" />
           <div className="mt-2">
             <div className="flex flex-wrap gap-3 w-full py-3">
