@@ -1,11 +1,31 @@
-import Image from "next/image";
+"use client"
+
+import { gsap, useGSAP } from "../gsap-config";
 import { Heading1, Heading3, Main } from "../components";
 import { projectImages } from "../../../constants";
 import Link from "next/link";
 import { FaArrowRight, FaArrowUpRightFromSquare, FaGithub, FaSquareArrowUpRight } from "react-icons/fa6";
 import clsx from "clsx";
+import Image from "next/image";
 
 export default function Project() {
+
+  useGSAP(() => {
+    document.querySelectorAll(".project-images").forEach((image, index) => {
+      console.log(image, index)
+      gsap.from(image, {
+        x: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: image,
+          start: "top 85%",
+        }
+      })
+    })
+  }, []);
+
   return (
     <Main>
       <Heading1 heading="All Projects" />
@@ -14,7 +34,7 @@ export default function Project() {
           {projectImages.map(({ id, title, description, src, tools, status }) => (
             <div
               key={id}
-              className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow group-hover:shadow-md group-hover:shadow-neutral-400"
+              className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow group-hover:shadow-md group-hover:shadow-neutral-400 project-images"
             >
               <div className="relative w-full aspect-4/3 bg-neutral-100 overflow-hidden">
                 <Image
