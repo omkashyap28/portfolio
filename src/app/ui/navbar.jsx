@@ -8,11 +8,13 @@ import clsx from "clsx";
 import { FaPaperPlane } from "react-icons/fa6";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
 
   const [activePage, setActivePage] = useState("home");
   const [navbarToggle, setNavbarToggle] = useState(false);
+  const pathname = usePathname();
 
   function toogleNavbar() {
     setNavbarToggle(toggle => !toggle)
@@ -30,6 +32,19 @@ export default function Navbar() {
   useEffect(() => {
     window.document.body.style.overflow = navbarToggle ? "hidden" : "auto"
   }, [navbarToggle])
+
+  useEffect(() => {
+    if (pathname === "/") {
+      (() => {
+        setActivePage("home")
+      }
+      )();
+    } else {
+      (() => {
+        setActivePage(pathname.replace("/", ""));
+      })()
+    }
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-999 w-full py-3 bg-gray-0 bg-neutral-100/80">
@@ -89,7 +104,7 @@ export default function Navbar() {
 
       </nav >
       <div className={clsx(
-        "fixed z-9999 flex flex-col gap-6 justify-center items-center top-0 h-screen w-screen bg-black text-neutral-100 transform duration-400 p-4 md:hidden",
+        "fixed z-9999 flex flex-col gap-6 justify-center items-center top-0 h-screen w-102 bg-black text-neutral-100 transform duration-400 p-4 md:hidden",
         {
           "right-0": navbarToggle,
           "-right-full": !navbarToggle
@@ -104,11 +119,16 @@ export default function Navbar() {
         {
           navbarLinks.map(({ title, slug }) => (
             <span key={title}
-              onClick={() => setActivePage(title)}
+              onClick={() => { setActivePage(title); setNavbarToggle() }}
             >
               <Link
-                className="text-2xl capitalize tracking-tight font-medium text-neutral-500"
-                href={slug}
+                className={clsx(
+                  "text-3xl capitalize tracking-tight font-medium",
+                  {
+                    "text-neutral-100": activePage === title,
+                    "text-neutral-500": activePage !== title
+                  }
+                )} href={slug}
               >
                 {title}
               </Link>
