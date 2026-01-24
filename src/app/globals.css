@@ -5,3 +5,11 @@
 button {
   cursor: pointer;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+#github-activity::-webkit-scrollbar {
+  width: 8px;
+}
