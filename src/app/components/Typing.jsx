@@ -18,9 +18,7 @@ export default function Typing() {
       loop: true,
       loopCount: Infinity,
       showCursor: false,
-      backSpeed: 5,
-    }
-    );
+    });
     return () => {
       typed.destroy();
     };
@@ -28,7 +26,7 @@ export default function Typing() {
   return (
     <span
       ref={animateBoxRef}
-      className="overflow-hidden h-19 rounded-md bg-neutral-900 backdrop-blur-lg ring-1 ring-black/40 shadow-lg shadow-neutral-400 min-w-44 text-neutral-100 px-4 py-2 transition-all duration-400"
+      className="flex items-center overflow-hidden h-17 sm:h-19 rounded-md bg-neutral-900 backdrop-blur-lg ring-1 ring-black/40 shadow-lg shadow-neutral-400 text-neutral-100 px-3 sm:px- py-1.5 transition-all duration-600"
     ></span>
   );
 }
