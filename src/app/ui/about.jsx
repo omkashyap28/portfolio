@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Main >
       <div className="mb-18">
-        <Heading2 heading="About Me" />
+        <Heading2 id="about-id" heading="About Me" />
         <div className="w-full">
           <div className="flex justify-start items-start gap-5 max-sm:flex-col">
             <div className="h-54 min-w-52 rounded-md shadow-sm shadow-neutral-400 ring-2 ring-neutral-700/70">

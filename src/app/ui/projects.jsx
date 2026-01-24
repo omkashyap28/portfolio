@@ -1,27 +1,44 @@
+"use client";
+
+import { gsap, useGSAP } from "../gsap-config";
 import Image from "next/image";
-import { Heading1, Heading3, Heading2, Main } from "../components";
+import { Heading3, Heading2, Main } from "../components";
 import { projectImages } from "../../../constants";
 import Link from "next/link";
-import { FaArrowRight, FaArrowUpRightFromSquare, FaGithub, FaSquareArrowUpRight } from "react-icons/fa6";
+import { FaArrowRight, FaArrowUpRightFromSquare, FaGithub } from "react-icons/fa6";
 import clsx from "clsx";
 
 export default function Projects() {
+  useGSAP(() => {
+    document.querySelectorAll(".project-images").forEach((image, index) => {
+      gsap.from(image, {
+        x: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: image,
+          start: "top 85%",
+        }
+      })
+    })
+  }, []);
+
   return (
     <Main className="w-full py-8">
-      <Heading2 heading="Recent Works" />
+      <Heading2 id="projects-heading" heading="Recent Works" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
         {projectImages.slice(0, 4).map(({ id, title, description, src, tools, status }) => (
           <div
             key={id}
-            className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow group-hover:shadow-md group-hover:shadow-neutral-400"
+            className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow-sm shadow-neutral-200/70 project-images"
           >
             <div className="relative w-full aspect-4/3 bg-neutral-100 overflow-hidden">
               <Image
                 src={src}
                 alt={title}
-                fill
-                className="object-cover transition-all duration-100 group-hover:blur-[1px]"
-                priority={id === 1}
+                fill={true}
+                className="object-cover transition-all duration-100"
               />
             </div>
             <div className="relative flex-1 flex flex-col justify-between p-5">
