@@ -1,10 +1,44 @@
+"use client"
+
+import { gsap, useGSAP, SplitText } from "../gsap-config"
 import { additionalTechStacks, techStacks } from "../../../constants";
 import { Heading2, Heading3, Main, Repos } from "../components";
 import Link from "next/link";
 import { GitHubCalendar } from "react-github-calendar";
 import Image from "next/image"
+import { useId } from "react";
 
 export default function About() {
+
+
+  const me = useId()
+  const desc = useId()
+
+  useGSAP(() => {
+    const splitDesc = new SplitText(`#${desc}`, { type: "chars, lines" });
+    const tl = gsap.timeline();
+    gsap.from(`#${me}`, {
+      left: "-100%",
+      opacity: 0,
+      duration: 0.9,
+      scrollTrigger: {
+        trigger: `#${me}`,
+        start: "top 80%",
+      }
+    })
+    gsap.from(splitDesc.lines, {
+      y: 10,
+      opacity: 0,
+      filter: "blur(3px)",
+      duration: 0.8,
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: `#${me}`,
+        start: "top 80%",
+      }
+    })
+  }, [])
+
   return (
     <Main >
       <div className="mb-18">
@@ -15,10 +49,12 @@ export default function About() {
 
             </div>
             <div className="w-full">
-              <Heading3 heading="Hariom Kashyap" className="m-0! text-2xl font-semibold" />
-              <h4 className="text-sm text-neutral-400 tracking-tight text-shadow-2xs -mt-1">Full Stack developer</h4>
-              <div className="">
-                <p className="text-sm text-neutral-600 tracking-tightest mt-3">
+              <div id={me}>
+                <Heading3 heading="Hariom Kashyap" className="m-0! text-2xl font-semibold" />
+                <h4 className="text-sm text-neutral-400 tracking-tight -mt-1">Full Stack developer</h4>
+              </div>
+              <div id={desc}>
+                <p className="text-sm text-neutral-600 tracking-tightest mt-3 leading-1">
                   I&lsquo;m building robust web apps, Always learning something new to enhanced my skills and knowldge. Passionate about creating seamless user experiences and writing clean, efficient code.
                 </p>
               </div>
