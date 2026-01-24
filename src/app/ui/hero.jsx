@@ -10,49 +10,54 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
 
-
 export default function Hero() {
 
   const heading1 = useId();
   const heading3 = useId();
   const p = useId();
+  const socialLinks = useId();
+  const ctaBtn = useId();
 
   useGSAP(() => {
-    gsap.registerPlugin(SplitText)
-    const paragraph = new SplitText(p, {
-      autoSplit: true
-    })
-    console.log(paragraph)
-
-
-
-    gsap.from(`#${heading3}`, {
+    const tl = gsap.timeline()
+    const paragraph = new SplitText("p", { type: "chars, lines" })
+    tl.from(`#${heading3}`, {
       y: 20,
       filter: "blur(4px)",
       opacity: 0,
-      duration: 0.6,
+      duration: 0.5,
     })
-    gsap.from(`#${heading1}`, {
+    tl.from(`#${heading1}`, {
       y: 30,
       filter: "blur(4px)",
       opacity: 0,
-      duration: 0.9,
+      duration: 0.7,
     })
-    gsap.from(p, {
-      y: 40,
-      filter: "blur(4px)",
+    tl.from(paragraph.lines, {
+      y: 30,
+      filter: "blur(3px)",
       opacity: 0,
-      duration: 1.1,
-      stagger: 0.4,
+      duration: 0.9,
+      stagger: 0.3,
     })
+    tl.from([`#${socialLinks}`, `#${ctaBtn}`], {
+      y: 30,
+      filter: "blur(3px)",
+      opacity: 0,
+      duration: 0.6,
+    }, "<")
+
+    return () => {
+      paragraph.revert();
+    }
   }, [])
 
   return (
     <div className="h-full">
       <div className="mt-24 w-full">
         <div>
-          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" />
-          <h1 id={heading1} className="flex flex-wrap items-center gap-3 text-6xl tracking-tight text-shadow-sm text-neutral-900 my-1">
+          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" className="bg-clip-text text-transparent bg-linear-to-tr from-neutral-900 to-neutral-300" />
+          <h1 id={heading1} className="flex flex-wrap items-center gap-3 text-[14vw] sm:text-6xl tracking-tight text-shadow-sm text-neutral-900 my-1">
             I Make
             <Typing />
             Web Experiences
@@ -61,7 +66,7 @@ export default function Hero() {
             A full-stack  web developer with strongly addicted for building high-quality, scalable applications.
           </p>
         </div>
-        <div className="block sm:hidden mt-6 mb-8">
+        <div id={ctaBtn} className="block sm:hidden mt-6 mb-8">
           <Link
             href="/contact"
             className="rounded-md tracking-tight px-2 py-1.5 bg-neutral-900 shadow-sm text-xl shadow-neutral-600/60 text-neutral-100 inline-block"
@@ -72,7 +77,7 @@ export default function Hero() {
             </div>
           </Link>
         </div>
-        <div className="my-5 flex items-center gap-5">
+        <div id={socialLinks} className="my-5 flex items-center gap-5">
           <Link className="text-2xl text-neutral-600 social-links " target="black" href="https://www.instagram.com/omkashyap7484">
             <FaInstagram />
           </Link>
