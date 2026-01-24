@@ -3,10 +3,9 @@
 import Link from "next/link";
 import { techStacks, additionalTechStacks } from "../../../constants";
 import { FaInstagram, FaLinkedinIn, FaXTwitter, FaGithub, FaEnvelope, FaPaperPlane, FaLink } from "react-icons/fa6"
-import { Heading2, Heading3 } from "../components";
+import { Heading2, Heading3, Typing } from "../components";
 import Image from "next/image"
 import { useId } from "react";
-import Typing from "../components/Typing";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
