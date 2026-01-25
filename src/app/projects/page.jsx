@@ -3,16 +3,14 @@
 import { gsap, useGSAP } from "../gsap-config";
 import { Heading1, Heading3, Main } from "../components";
 import { projectImages } from "../../../constants";
-import Link from "next/link";
-import { FaArrowRight, FaArrowUpRightFromSquare, FaGithub, FaSquareArrowUpRight } from "react-icons/fa6";
-import clsx from "clsx";
+import Link from "next/link"; import clsx from "clsx";
 import Image from "next/image";
+import { ExternalLinkIcon, GithubIcon, ArrowRightIcon } from "../icons";
 
 export default function Project() {
 
   useGSAP(() => {
     document.querySelectorAll(".project-images").forEach((image, index) => {
-      console.log(image, index)
       gsap.from(image, {
         x: 30,
         opacity: 0,
@@ -31,7 +29,7 @@ export default function Project() {
       <Heading1 heading="All Projects" />
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-          {projectImages.map(({ id, title, description, src, tools, status }) => (
+          {projectImages.map(({ id, title, description, src, tools, status, url, github, nextjsSrc }) => (
             <div
               key={id}
               className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow group-hover:shadow-md group-hover:shadow-neutral-400 project-images"
@@ -48,18 +46,18 @@ export default function Project() {
               <div className="relative flex-1 flex flex-col justify-between p-5">
                 <div className="absolute top-5 right-5">
                   <div className="flex gap-3 items-center">
-                    <Link href="#">
-                      <FaGithub className="text-[16px] text-neutral-600" />
+                    <Link href={github} target="black">
+                      <GithubIcon className="size-4" />
                     </Link>
-                    <Link href="#">
-                      <FaArrowUpRightFromSquare className="text-[16px] text-neutral-600" />
+                    <Link href={url} target="blank">
+                      <ExternalLinkIcon className="size-4" />
                     </Link>
                   </div>
                 </div>
                 <div>
                   <Heading3 heading={title} className="mb-2 mt-4 text-lg font-semibold md:text-xl" />
-                  <p className="text-neutral-600 text-sm md:text-base min-h-12">
-                    {description || "A modern web project with a clean UI and responsive layout."}
+                  <p className="text-neutral-600 text-[11px] md:text-base min-h-12 leading-5 tracking-tight">
+                    {description || "No description"}
                   </p>
                 </div>
                 {tools && tools.length > 0 && (
@@ -72,7 +70,15 @@ export default function Project() {
                   </div>
                 )}
                 <div className="flex items-center justify-between mt-3">
-                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full shadow-sm">
+                  <div className={clsx(
+                    "flex items-center gap-1 px-2 py-0.5 rounded-full shadow-sm",
+                    {
+                      "bg-green-100": status === "active",
+                      "bg-red-100": status === "not-active",
+                      "bg-blue-100": status === "development",
+                    }
+                  )}
+                  >
                     <div className={clsx(
                       "h-2 w-2 rounded-full",
                       {
@@ -91,12 +97,12 @@ export default function Project() {
 
                     </div>
                   </div>
-                  <Link href="#">
+                  <Link href={nextjsSrc}>
                     <span className="flex items-center gap-1 text-[14px] text-neutral-600">
                       <span className="hover:underline">
                         All detalis
                       </span>
-                      <FaArrowRight className="text-[10px]" />
+                      <ArrowRightIcon className="size-3" />
                     </span>
                   </Link>
                 </div>

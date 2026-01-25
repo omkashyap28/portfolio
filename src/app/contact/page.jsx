@@ -95,7 +95,7 @@ export default function Contact() {
               placeholder="example@mail.com"
               className={clsx(
                 "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-transparent shadow-md shadow-neutral-300/30 rounded-md",
-                { "ring-2 ring-red-600": errors.email }
+                { "ring-2 ring-red-600": errors.contact }
               )}
               {...register("email", { required: "Email is required" })}
             />

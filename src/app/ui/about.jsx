@@ -45,8 +45,8 @@ export default function About() {
         <Heading2 id="about-id" heading="About Me" />
         <div className="w-full">
           <div className="flex justify-start items-start gap-5 max-sm:flex-col">
-            <div className="h-54 min-w-52 rounded-md shadow-sm shadow-neutral-400 ring-2 ring-neutral-700/70">
-
+            <div className="h-54 min-w-52 rounded-md overflow-hidden">
+              <Image src="/om-icon.png" alt="My profile image" height={216} width={208} className="object-center" />
             </div>
             <div className="w-full">
               <div id={me}>

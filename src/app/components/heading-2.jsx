@@ -7,7 +7,7 @@ export default function Heading2({ heading, className, id, ...props }) {
     const splitHeading = new SplitText(`#${id}`, { type: "chars, lines" });
 
     gsap.from(splitHeading.chars, {
-      x: 20,
+      x: 10,
       opacity: 0,
       duration: 0.4,
       stagger: 0.05,

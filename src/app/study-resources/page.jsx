@@ -10,35 +10,35 @@ export default function StudyResources() {
         <h4 className="text-xl text-neutral-700 mt-4 mb-2">
           Recommended Sites
         </h4>
-        <ul>
-          <li>
+        <ul className="list-disc">
+          <li className="ml-8">
             HTML : <Link className="text-blue-600 underline" href="https://developer.mozilla.org/en-US/docs/Web/HTML">www.developer.mozilla.org</Link>
           </li>
-          <li>
+          <li className="ml-8">
             CSS : <Link className="text-blue-600 underline" href="https://developer.mozilla.org/en-US/docs/Web/CSS">www.developer.mozilla.org</Link>
           </li>
-          <li>
+          <li className="ml-8">
             JavaScript : <Link className="text-blue-600 underline" href="https://javascript.info/">www.javascript.info</Link>
           </li>
-          <li>
+          <li className="ml-8">
             GSAP : <Link className="text-blue-600 underline" href="https://greensock.com/docs/">www.greensock.com</Link>
           </li>
-          <li>
+          <li className="ml-8">
             React : <Link className="text-blue-600 underline" href="https://react.dev/learn">www.react.dev</Link>
           </li>
-          <li>
+          <li className="ml-8">
             Framer Motion : <Link className="text-blue-600 underline" href="https://www.framer.com/motion/">www.framer.com</Link>
           </li>
-          <li>
+          <li className="ml-8">
             Barba.js : <Link className="text-blue-600 underline" href="https://barba.js.org/docs/getstarted/">www.barba.js.org</Link>
           </li>
-          <li>
+          <li className="ml-8">
             TypeScript : <Link className="text-blue-600 underline" href="https://www.typescriptlang.org/docs/">www.typescriptlang.org</Link>
           </li>
-          <li>
+          <li className="ml-8">
             ShadCN UI : <Link className="text-blue-600 underline" href="https://ui.shadcn.com/docs">www.ui.shadcn.com</Link>
           </li>
-          <li>
+          <li className="ml-8">
             Next.js : <Link className="text-blue-600 underline" href="https://nextjs.org/docs">www.nextjs.org</Link>
           </li>
 
@@ -46,38 +46,37 @@ export default function StudyResources() {
       </div>
       <div>
         <h4 className="text-xl text-neutral-700 mt-4 mb-2">
-          Recommended Videos
+          Projects
         </h4>
-        <ul>
-          <li>HTML - <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML">link</Link></li>
-          <li>CSS - <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS">link</Link></li>
-          <li>JavaScript - <Link href="https://javascript.info/">link</Link></li>
-          <li>GSAP - <Link href="https://greensock.com/docs/">link</Link></li>
-          <li>React - <Link href="https://react.dev/learn">link</Link></li>
-          <li>Framer Motion - <Link href="https://www.framer.com/motion/">link</Link></li>
-          <li>Barba.js - <Link href="https://barba.js.org/docs/getstarted/">link</Link></li>
-          <li>TypeScript - <Link href="https://www.typescriptlang.org/docs/">link</Link></li>
-          <li>ShadCN UI - <Link href="https://ui.shadcn.com/docs">link</Link></li>
-          <li>Next.js - <Link href="https://nextjs.org/docs">link</Link></li>
+        <h5 className="my-2 text-lg">
+          Bigginers
+        </h5>
+        <ul className="list-disc">
+          <li className="ml-8">To-Do App</li>
+          <li className="ml-8">Weather App</li>
+          <li className="ml-8">Calculator</li>
+          <li className="ml-8">Quiz App</li>
+          <li className="ml-8">News App</li>
+        </ul>
+        <h5 className="my-2 text-lg">
+          Intermediate
+        </h5>
+        <ul className="list-disc">
+          <li className="ml-8">Blog App</li>
+          <li className="ml-8">E-Commerce</li>
+          <li className="ml-8">Chat App</li>
+          <li className="ml-8">Portfolio</li>
+        </ul>
+        <h5 className="my-2 text-lg">
+          Advance
+        </h5>
+        <ul className="list-disc">
+          <li className="ml-8">Advance E-Commerce</li>
+          <li className="ml-8">Learning Management Site</li>
+          <li className="ml-8">Youtube Clone</li>
+          <li className="ml-8">Social Media</li>
         </ul>
       </div>
-      <div>
-        <h4 className="text-xl text-neutral-700 mt-4 mb-2">
-          Projects - For Biggeners
-        </h4>
-        <ul>
-          <li>HTML - <Link href="https://developer.mozilla.org/en-US/docs/Web/HTML">link</Link></li>
-          <li>CSS - <Link href="https://developer.mozilla.org/en-US/docs/Web/CSS">link</Link></li>
-          <li>JavaScript - <Link href="https://javascript.info/">link</Link></li>
-          <li>GSAP - <Link href="https://greensock.com/docs/">link</Link></li>
-          <li>React - <Link href="https://react.dev/learn">link</Link></li>
-          <li>Framer Motion - <Link href="https://www.framer.com/motion/">link</Link></li>
-          <li>Barba.js - <Link href="https://barba.js.org/docs/getstarted/">link</Link></li>
-          <li>TypeScript - <Link href="https://www.typescriptlang.org/docs/">link</Link></li>
-          <li>ShadCN UI - <Link href="https://ui.shadcn.com/docs">link</Link></li>
-          <li>Next.js - <Link href="https://nextjs.org/docs">link</Link></li>
-        </ul>
-      </div>
-    </Main>
+    </Main >
   )
 }

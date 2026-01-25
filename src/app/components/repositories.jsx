@@ -1,6 +1,5 @@
 "use client";
 
-import { Heading3 } from ".";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
