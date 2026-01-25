@@ -67,7 +67,7 @@ export default function Projects() {
                   ))}
                 </div>
               )}
-              <div className="flex items-center justify-between mt-3">
+              <div className="flex items-center justify-start mt-3">
                 <div className={clsx(
                   "flex items-center gap-1 px-2 py-0.5 rounded-full shadow-sm",
                   {
@@ -95,14 +95,6 @@ export default function Projects() {
 
                   </div>
                 </div>
-                <Link href={nextjsSrc}>
-                  <span className="flex items-center gap-1 text-[14px] text-neutral-600">
-                    <span className="hover:underline">
-                      All detalis
-                    </span>
-                    <ArrowRightIcon className="size-3" />
-                  </span>
-                </Link>
               </div>
             </div>
           </div>
