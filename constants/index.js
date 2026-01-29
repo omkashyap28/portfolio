@@ -178,6 +178,42 @@ export const projectImages = [
     nextjsSrc: "/projects/iics",
     status: "development",
   },
+  {
+    id: 2,
+    uniqueName: "iics",
+    title: "India Institute of Computer Science",
+    description:
+      "This webpage is reimagine version of a computer institute webpage but in development. Get live soon... .",
+    tools: [
+      "/images/react.svg",
+      "/images/tailwindcss.svg",
+      "/images/javascript.svg",
+      "/images/gsap.svg",
+    ],
+    github: "https://github.com/omkashyap28/iics-lms",
+    src: "/images/projects/iics.png",
+    url: "https://iics-lms.vercel.app/",
+    nextjsSrc: "/projects/iics",
+    status: "development",
+  },
+  {
+    id: 3,
+    uniqueName: "iics",
+    title: "India Institute of Computer Science",
+    description:
+      "This webpage is reimagine version of a computer institute webpage but in development. Get live soon... .",
+    tools: [
+      "/images/react.svg",
+      "/images/tailwindcss.svg",
+      "/images/javascript.svg",
+      "/images/gsap.svg",
+    ],
+    github: "https://github.com/omkashyap28/iics-lms",
+    src: "/images/projects/iics.png",
+    url: "https://iics-lms.vercel.app/",
+    nextjsSrc: "/projects/iics",
+    status: "development",
+  },
 ];
 
 export const tagLines = ["Stand alone", "Attractive", "Clean", "Unforgateble"];

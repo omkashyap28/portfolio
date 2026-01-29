@@ -1,0 +1,99 @@
+import Link from "next/link"
+import { AddIcon, ExternalLinkIcon, GithubIcon } from "../icons"
+import Image from "next/image"
+import { projectImages } from "../../../constants"
+import clsx from "clsx"
+
+export default function Dashboard() {
+  return (
+    <main>
+      <header className="w-full py-2">
+        <div className="flex itmes-center justify-between">
+          <h1 className="text-4xl tracking-tight font-semibold">
+            Projects
+          </h1>
+          <Link
+            className="p-2 bg-neutral-900 text-neutral-50 hover:bg-neutral-800 rounded-md"
+            href="/admin/add-project">
+            <span className="flex items-center gap-1"><AddIcon /> Add Project</span>
+          </Link>
+        </div>
+      </header>
+      <section className="w-full mt-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+          {projectImages.slice(0, 4).map(({ id, title, description, src, tools, status, url, github, nextjsSrc }) => (
+            <div
+              key={id}
+              className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow-sm shadow-neutral-200/70 project-images"
+            >
+              <div className="relative w-full aspect-4/3 bg-neutral-100 overflow-hidden">
+                <Image
+                  src={src}
+                  alt={title}
+                  fill={true}
+                  className="object-cover transition-all duration-100"
+                />
+              </div>
+              <div className="relative flex-1 flex flex-col justify-between px-3 py-5">
+                <div className="absolute top-5 right-5">
+                  <div className="flex gap-3 items-center">
+                    <Link href={github} target="black">
+                      <GithubIcon className="size-4" />
+                    </Link>
+                    <Link href={url} target="blank">
+                      <ExternalLinkIcon className="size-4" />
+                    </Link>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="mb-2 mt-4 text-lg font-semibold md:text-xl">{title}</h3>
+                  <p className="text-neutral-600 text-[11px] md:text-base min-h-12 leading-5 tracking-tight">
+                    {description || "No description"}
+                  </p>
+                </div>
+                {tools && tools.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {tools.map((tool, idx) => (
+                      <span key={idx} className="inline-flex items-center justify-center w-7 h-7">
+                        <Image src={tool} alt="tool" width={20} height={20} className="object-contain" />
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div className="flex items-center justify-start mt-3">
+                  <div className={clsx(
+                    "flex items-center gap-1 px-2 py-0.5 rounded-full shadow-sm",
+                    {
+                      "bg-green-100": status === "active",
+                      "bg-red-100": status === "not-active",
+                      "bg-blue-100": status === "development",
+                    }
+                  )}
+                  >
+                    <div className={clsx(
+                      "h-2 w-2 rounded-full",
+                      {
+                        "bg-green-700": status === "active",
+                        "bg-red-700": status === "not-active",
+                        "bg-blue-700": status === "development",
+                      }
+                    )
+                    }></div>
+                    <div className="text-[12px] text-neutral-600">
+                      {
+                        status === "active" ? <span>Active</span>
+                          :
+                          status === "not-active" ? <span>Not Active</span> : <span>Building</span>
+                      }
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  )
+}

@@ -100,7 +100,7 @@ export default function About() {
             </div>
           </div>
           <div id="github-activity" className="w-full mt-14">
-            <div className="w-full p-3 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-md">
+            <div className="w-full p-3 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-sm">
               <h4 className="text-sm text-neutral-500 tracking-tight text-shadow-2xs mb-4">
                 Github Activity
               </h4>

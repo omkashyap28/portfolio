@@ -7,7 +7,7 @@ export default function Other() {
     <div>
       <section className="w-full">
         <Link href="/vs-code-setups">
-          <div className="w-full my-3 px-5 py-2 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-md transition-shadow duration-100 hover:shadow-neutral-500/40">
+          <div className="w-full my-3 px-5 py-2 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-sm transition-shadow duration-100 hover:shadow-neutral-500/40">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <SquareCodeIcon />
@@ -18,7 +18,7 @@ export default function Other() {
           </div>
         </Link>
         <Link href="/study-resources">
-          <div className="w-full my-3 px-5 py-2 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-md transition-shadow duration-100 hover:shadow-neutral-500/40">
+          <div className="w-full my-3 px-5 py-2 rounded-md border border-neutral-300/60 bg-[#F9F9FA] shadow-sm transition-shadow duration-100 hover:shadow-neutral-500/40">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <BookOpenIcon />

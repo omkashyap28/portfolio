@@ -26,7 +26,7 @@ export default function NotFound() {
   })
 
   return (
-    <div className="h-[60vh] w-full z-99 bg-neutral-100">
+    <div className="h-[60vh] w-full z-99 bg-neutral-50">
       <div className="flex items-center justify-center h-full w-full">
         <div>
           <Heading2 id="not-found" heading={

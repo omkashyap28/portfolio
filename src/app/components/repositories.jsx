@@ -56,7 +56,7 @@ export default function Repos() {
         className="mt-2 flex items-center gap-2 text-blue-600 hover:underline"
         onClick={() => setShowAll(showAll => !showAll)}
       >
-        {repos.length > 5 ? "Show all" : "show less"}
+        {repos.length > 5 ? "Show all" : "Show less"}
       </button>
     </div>
   );

@@ -18,17 +18,15 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         cz-shortcut-listen="true"
-        className={`${inter.className} bg-neutral-100 antialiased selection:bg-neutral-900 selection:text-neutral-100`}
+        className={`${inter.className} bg-neutral-50 antialiased selection:bg-neutral-900 selection:text-neutral-50`}
       >
-        <>
-          <Container>
-            <Navbar />
-            {children}
-            <Blur />
-            <Footer />
-          </Container>
-        </>
+        <div>
+          <Navbar />
+          {children}
+          <Blur />
+          <Footer />
+        </div>
       </body>
-    </html>
+    </html >
   );
 }
