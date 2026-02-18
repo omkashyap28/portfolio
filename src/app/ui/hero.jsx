@@ -65,7 +65,7 @@ export default function Hero() {
     <div className="h-full">
       <div className="mt-24 w-full">
         <div>
-          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" className="bg-clip-text text-transparent bg-linear-to-t from-neutral-900 to-neutral-600 text-shadow-sm" />
+          <Heading3 id={heading3} heading="Hey, I am Hariom Kashyap - Fullstack Developer" className="bg-clip-text text-transparent bg-linear-to-t from-neutral-900 to-neutral-600" />
           <h1 id={heading1} className="flex flex-wrap flex-col sm:items-center sm:flex-row items-start sm:gap-3 text-[11vw] sm:text-6xl tracking-tight text-shadow-sm text-neutral-900">
             I Make
             <Typing />
@@ -123,7 +123,7 @@ export default function Hero() {
                     </button>
 
                     <div
-                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-sm:hidden"
+                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-md:hidden"
                     >
                       <div
                         className="relative p-2 bg-neutral-900 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]"
@@ -166,7 +166,7 @@ export default function Hero() {
                     </button>
 
                     <div
-                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-sm:hidden"
+                      className="absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 transition-all duration-300 ease-out transform group-hover:translate-y-0 translate-y-2 max-md:hidden"
                     >
                       <div
                         className="relative p-2 bg-neutral-900 backdrop-blur-md rounded-2xl border border-white/10 shadow-[0_0_30px_rgba(79,70,229,0.15)]"

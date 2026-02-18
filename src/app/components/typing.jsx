@@ -13,7 +13,7 @@ export default function Typing() {
     const typed = new Typed(
       animateBoxRef.current, {
       strings: tagLines,
-      typeSpeed: 30,
+      typeSpeed: 20,
       backDelay: 1000,
       loop: true,
       loopCount: Infinity,
@@ -26,7 +26,7 @@ export default function Typing() {
   return (
     <span
       ref={animateBoxRef}
-      className="flex items-center overflow-hidden h-17 sm:h-19 rounded-md bg-neutral-900 backdrop-blur-lg ring-1 ring-black/40 shadow-lg shadow-neutral-400 text-neutral-100 px-3 sm:px- py-1.5 transition-all duration-600"
+      className="flex items-center overflow-hidden h-17 sm:h-19 rounded-md bg-neutral-900 backdrop-blur-lg ring-1 ring-black/40 shadow-md shadow-neutral-400/60 text-neutral-100 px-3 sm:px- py-1.5 transition-all duration-600"
     ></span>
   );
 }

@@ -45,7 +45,6 @@ export default function Contact() {
   return (
     <Container>
       <Main>
-
         <div className="w-full max-w-md mx-auto mt-10">
           <Heading1 heading="Contact Me" />
           <form
@@ -57,18 +56,17 @@ export default function Contact() {
                 Who you are? <span className="text-red-600 text-sm mb-4">*</span>
               </label>
               <select name="type" id="type"
-                className={clsx(
-                  "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md",
-                  { "ring-2 ring-red-600": errors.type }
-                )}
+                className="flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-400 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md"
                 {...register("type", { required: "This feild is required" })}
               >
-                <option value="" disabled selected>Select an option...</option>
+                <option disabled selected >Select an option...</option>
                 <option value="hr">Hiring Recuitor</option>
                 <option value="freelancer">Freelancer</option>
                 <option value="colabrator">Colabrator</option>
                 <option value="other">Other</option>
               </select>
+              <p className="text-red-600 text-sm">{errors.type?.message}</p>
+
             </div>
             <div className="flex flex-col justify-start">
               <label htmlFor="name">
@@ -78,12 +76,10 @@ export default function Contact() {
                 name="name"
                 id="name"
                 placeholder="Hariom Kashyap"
-                className={clsx(
-                  "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md",
-                  { "ring-2 ring-red-600": errors.name }
-                )}
+                className="flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-400 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md"
                 {...register("name", { required: "Name is required" })}
               />
+              <p className="text-red-600 text-sm">{errors.name?.message}</p>
             </div>
             <div className="flex flex-col justify-start">
               <label htmlFor="email">
@@ -93,12 +89,11 @@ export default function Contact() {
                 name="email"
                 id="email"
                 placeholder="example@mail.com"
-                className={clsx(
-                  "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md",
-                  { "ring-2 ring-red-600": errors.contact }
-                )}
+                className="flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-400 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md"
                 {...register("email", { required: "Email is required" })}
               />
+              <p className="text-red-600 text-sm">{errors.email?.message}</p>
+
             </div>
             <div className="flex flex-col justify-start">
               <label htmlFor="contact">
@@ -108,12 +103,11 @@ export default function Contact() {
                 name="contact"
                 id="contact"
                 placeholder="1234567890"
-                className={clsx(
-                  "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md",
-                  { "ring-2 ring-red-600": errors.contact }
-                )}
+                className="flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-400 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md"
                 {...register("contact")}
               />
+              <p className="text-red-600 text-sm">{errors.contact?.message}</p>
+
             </div>
             <div className="flex flex-col justify-start">
               <label htmlFor="message">
@@ -123,13 +117,12 @@ export default function Contact() {
                 name="message"
                 id="message"
                 placeholder="Your message(max-100)"
-                className={clsx(
-                  "flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-600 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md resize-none",
-                  { "ring-2 ring-red-600": errors.message }
-                )}
+                className="flex-1 px-4 py-2 ring-1 outline-none border-none ring-neutral-200 placeholder:text-neutral-400 font-normal bg-white shadow-sm shadow-neutral-300/30 rounded-md resize-none"
                 {...register("message", { required: "Message is required", maxLength: 100 })}
                 rows={5}
               ></textarea>
+              <p className="text-red-600 text-sm">{errors.message?.message}</p>
+
             </div>
 
             <button

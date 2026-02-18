@@ -38,7 +38,7 @@ export default function Projects() {
                 src={src}
                 alt={title}
                 fill={true}
-                className="object-cover transition-all duration-100"
+                className="object-cover transition-all duration-100 mask-b-to-white"
               />
             </div>
             <div className="relative flex-1 flex flex-col justify-between px-3 py-5">

@@ -51,7 +51,7 @@ export default function About() {
             <div className="w-full">
               <div id={me}>
                 <Heading3 heading="Hariom Kashyap" className="m-0! text-2xl font-semibold" />
-                <h4 className="text-sm text-neutral-400 tracking-tight -mt-1">Full Stack developer</h4>
+                <h4 className="text-sm text-neutral-400 tracking-tight -mt-1">Fullstack Developer</h4>
               </div>
               <div id={desc}>
                 <p className="text-sm text-neutral-600 tracking-tightest mt-3 leading-1">
@@ -68,7 +68,7 @@ export default function About() {
                           <Image src={src} alt={name} height={28} width={28} />
                         </Link>
                         <span
-                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-sm:hidden"
+                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-md:hidden"
                         >
                           {name}
                           <span
@@ -85,7 +85,7 @@ export default function About() {
                           <Image src={src} alt={name} height={28} width={28} />
                         </Link>
                         <span
-                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-sm:hidden"
+                          className="absolute pointer-events-none opacity-0 group-hover:opacity-100 px-2 py-0.5 text-sm font-medium text-white bg-[#1A1F2C] backdrop-blur-sm rounded-lg shadow-lg border border-neutral-800/10 transition-all duration-200 ease-in-out whitespace-nowrap z-50 bottom-full left-1/2 -translate-x-1/2 -translate-y-2 max-md:hidden"
                         >
                           {name}
                           <span
@@ -104,7 +104,7 @@ export default function About() {
               <h4 className="text-sm text-neutral-500 tracking-tight text-shadow-2xs mb-4">
                 Github Activity
               </h4>
-              <GitHubCalendar blockSize={17} errorMessage="" colorScheme="light" blockRadius={2} blockMargin={4} showWeekdayLabels={true} showColorLegend={true} username="omkashyap28" />
+              <GitHubCalendar blockSize={9} errorMessage="" colorScheme="light" blockRadius={2} blockMargin={4} showWeekdayLabels={true} showColorLegend={true} username="omkashyap28" />
               <div className="w-full">
                 <Heading3 heading="My repositories" className="mt-0" />
                 <Repos />

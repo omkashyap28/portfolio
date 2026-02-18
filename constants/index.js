@@ -1,14 +1,14 @@
 export const navbarLinks = [
   {
-    title: "home",
+    title: "Home",
     slug: "/",
   },
   {
-    title: "projects",
+    title: "Projects",
     slug: "/projects",
   },
   {
-    title: "resume",
+    title: "Resume",
     slug: "/resume",
   },
 ];
@@ -216,4 +216,4 @@ export const projectImages = [
   },
 ];
 
-export const tagLines = ["Stand alone", "Attractive", "Clean", "Unforgateble"];
+export const tagLines = ["Stand alone", "User Friendly", "Unforgateble"];
