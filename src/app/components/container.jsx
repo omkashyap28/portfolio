@@ -20,12 +20,12 @@ export default function Container({ children }) {
           smoothWheel: true,
           duration: 1,
           easing: "easeOutExpo",
-          autoRef: false
+          autoRef: false,
         }}
-        ref={lenisRef} root />
-      <div className="w-full max-w-2xl mx-auto px-5">
-        {children}
-      </div>
+        ref={lenisRef}
+        root
+      />
+      <div className="mx-auto w-full max-w-154.5 px-5">{children}</div>
     </>
   );
 }

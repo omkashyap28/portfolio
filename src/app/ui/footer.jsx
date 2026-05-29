@@ -5,7 +5,7 @@ import { Container } from "../components";
 export default function Footer() {
   return (
     <Container>
-      <footer className="w-full pb-18 mt-12">
+      <footer className="w-full pb-18 mt-18">
         <div className="py-8 w-full">
           <div className="flex justify-center items-center">
             <div className="flex gap-6">

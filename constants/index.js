@@ -36,13 +36,6 @@ export const techStacks = [
     src: "/images/tailwindcss.svg",
   },
   {
-    id: 4,
-    name: "POSTGRESQL",
-    description: "An open-source relational database system.",
-    url: "https://www.postgresql.org/",
-    src: "/images/postgresql.svg",
-  },
-  {
     id: 5,
     name: "GSAP",
     description: "A JavaScript library for high-performance animations.",
@@ -55,13 +48,6 @@ export const techStacks = [
     description: "A React animation library for declarative motion.",
     url: "https://www.framer.com/motion/",
     src: "/images/framermotion.svg",
-  },
-  {
-    id: 7,
-    name: "BARBAJS",
-    description: "A library for smooth page transitions.",
-    url: "https://barba.js.org",
-    src: "/images/barbajs.svg",
   },
   {
     id: 8,
@@ -78,19 +64,19 @@ export const techStacks = [
     src: "/images/github.svg",
   },
   {
-    id: 10,
-    name: "APPWRITE",
-    description: "An open-source backend server platform.",
-    url: "https://appwrite.io",
-    src: "/images/appwrite.svg",
-  },
-  {
     id: 11,
     name: "SHADCN UI",
     description: "Reusable UI components built with Radix and Tailwind.",
     url: "https://ui.shadcn.com",
     src: "/images/shadcn.svg",
   },
+  {
+    id: 12,
+    name: "POSTMAN",
+    description: "",
+    url: "https://www.postman.com/",
+    src: "images/postman.svg"
+  }
 ];
 
 export const additionalTechStacks = [
@@ -124,84 +110,103 @@ export const additionalTechStacks = [
   },
   {
     id: 5,
+    name: "MONGODB",
+    description: "An open-source ",
+    url: "https://mongodb.com",
+    src: "/images/mongodb.svg",
+  },
+  {
+    id: 6,
     name: "PHP",
     description: "A server-side scripting language.",
     url: "https://www.php.net",
     src: "/images/php.svg",
   },
   {
-    id: 6,
+    id: 7,
     name: "LARAVEL",
     description: "A PHP framework for web applications.",
     url: "https://laravel.com",
     src: "/images/laravel.svg",
   },
   {
-    id: 7,
+    id: 8,
     name: "JAVASCRIPT",
     description: "A programming language for the web.",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     src: "/images/javascript.svg",
   },
   {
-    id: 8,
+    id: 9,
     name: "TYPESCRIPT",
     description: "A typed superset of JavaScript.",
     url: "https://www.typescriptlang.org",
     src: "/images/typescript.svg",
   },
   {
-    id: 9,
+    id: 10,
     name: "CSS",
     description: "A style sheet language for web pages.",
     url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     src: "/images/css.svg",
   },
+  {
+    id: 11,
+    name: "SPRING BOOT",
+    description: "",
+    url: "",
+    src: "images/spring.svg"
+  }
 ];
 
 export const projectImages = [
   {
     id: 1,
-    uniqueName: "iics",
-    title: "India Institute of Computer Science",
+    uniqueName: "react-pings",
+    title: "React Pings",
     description:
-      "This webpage is reimagine version of a computer institute webpage but in development. Get live soon... .",
+      "Modern toast notification library for react apps with fully customizable designs and easy implemention without complex setups.",
     tools: [
+      "/images/nextjs.svg",
       "/images/react.svg",
       "/images/tailwindcss.svg",
-      "/images/javascript.svg",
-      "/images/gsap.svg",
+      "/images/typescript.svg",
+      "/images/framermotion.svg",
+      "images/zustand.svg",
     ],
-    github: "https://github.com/omkashyap28/iics-lms",
-    src: "/images/projects/iics.png",
-    url: "https://iics-lms.vercel.app/",
-    nextjsSrc: "/projects/iics",
-    status: "development",
+    github: "https://github.com/omkashyap28/react-pings",
+    src: "/images/projects/react-pings.png",
+    url: "https://react-pings.vercel.app/",
+    nextjsSrc: "/projects/react-pings",
+    status: "active",
   },
   {
     id: 2,
-    uniqueName: "iics",
-    title: "India Institute of Computer Science",
-    description:
-      "This webpage is reimagine version of a computer institute webpage but in development. Get live soon... .",
+    uniqueName: "shoppy-cart",
+    title: "Shoppy Cart",
+    description: "Designed a scalable e-commerce system with authentication, product management,order handling, wallet management, and payment workflows.",
     tools: [
+      "/images/nextjs.svg",
       "/images/react.svg",
       "/images/tailwindcss.svg",
-      "/images/javascript.svg",
-      "/images/gsap.svg",
+      "/images/shadcn.svg",
+      "/images/typescript.svg",
+      "images/java.svg",
+      "/images/spring.svg",
+      "images/oauth.svg",
+      "images/mysql.svg"
     ],
-    github: "https://github.com/omkashyap28/iics-lms",
-    src: "/images/projects/iics.png",
-    url: "https://iics-lms.vercel.app/",
-    nextjsSrc: "/projects/iics",
+    github: "https://github.com/omkashyap28/shoppy-cart",
+    src: "/images/projects/shoppy-cart.png",
+    url: "#",
+    nextjsSrc: "/projects/shoppy-cart",
     status: "development",
   },
   {
     id: 3,
     uniqueName: "iics",
-    title: "India Institute of Computer Science",
-    description:
-      "This webpage is reimagine version of a computer institute webpage but in development. Get live soon... .",
+    title: "India Institute of Computer Science(Reimagine)",
+    description: "Reimagine landing of a computer institute",
     tools: [
       "/images/react.svg",
       "/images/tailwindcss.svg",
@@ -212,8 +217,9 @@ export const projectImages = [
     src: "/images/projects/iics.png",
     url: "https://iics-lms.vercel.app/",
     nextjsSrc: "/projects/iics",
-    status: "development",
+    status: "active",
   },
+  
 ];
 
 export const tagLines = ["Stand alone", "User Friendly", "Unforgateble"];

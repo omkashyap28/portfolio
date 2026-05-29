@@ -51,7 +51,7 @@ export default function About() {
             <div className="w-full">
               <div id={me}>
                 <Heading3 heading="Hariom Kashyap" className="m-0! text-2xl font-semibold" />
-                <h4 className="text-sm text-neutral-400 tracking-tight -mt-1">Fullstack Developer</h4>
+                <h4 className="text-sm text-neutral-400 tracking-tight -mt-1">Frontend Developer</h4>
               </div>
               <div id={desc}>
                 <p className="text-sm text-neutral-600 tracking-tightest mt-3 leading-1">
@@ -104,7 +104,7 @@ export default function About() {
               <h4 className="text-sm text-neutral-500 tracking-tight text-shadow-2xs mb-4">
                 Github Activity
               </h4>
-              <GitHubCalendar blockSize={9} errorMessage="" colorScheme="light" blockRadius={2} blockMargin={4} showWeekdayLabels={true} showColorLegend={true} username="omkashyap28" />
+              <GitHubCalendar blockSize={12} errorMessage="" colorScheme="light" blockRadius={2} blockMargin={3} showWeekdayLabels={true} showColorLegend={true} username="omkashyap28" />
               <div className="w-full">
                 <Heading3 heading="My repositories" className="mt-0" />
                 <Repos />

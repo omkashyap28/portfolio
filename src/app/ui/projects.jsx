@@ -19,86 +19,112 @@ export default function Projects() {
         scrollTrigger: {
           trigger: image,
           start: "top 85%",
-        }
-      })
-    })
+        },
+      });
+    });
   }, []);
 
   return (
     <Main className="w-full py-8">
       <Heading2 id="projects-heading" heading="Recent Works" />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-        {projectImages.slice(0, 4).map(({ id, title, description, src, tools, status, url, github, nextjsSrc }) => (
-          <div
-            key={id}
-            className="group bg-[#F9F9FA] rounded-2xl transition-shadow duration-300 border border-neutral-200/70 overflow-hidden flex flex-col mt-6 h-full shadow-sm shadow-neutral-200/70 project-images"
-          >
-            <div className="relative w-full aspect-4/3 bg-neutral-100 overflow-hidden">
-              <Image
-                src={src}
-                alt={title}
-                fill={true}
-                className="object-cover transition-all duration-100 mask-b-to-white"
-              />
-            </div>
-            <div className="relative flex-1 flex flex-col justify-between px-3 py-5">
-              <div className="absolute top-5 right-5">
-                <div className="flex gap-3 items-center">
-                  <Link href={github} target="black">
-                    <GithubIcon className="size-4" />
-                  </Link>
-                  <Link href={url} target="blank">
-                    <ExternalLinkIcon className="size-4" />
-                  </Link>
+      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        {projectImages
+          .slice(0, 4)
+          .map(
+            ({
+              id,
+              title,
+              description,
+              src,
+              tools,
+              status,
+              url,
+              github,
+              nextjsSrc,
+            }) => (
+              <div
+                key={id}
+                className="group project-images mt-6 flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200/70 bg-[#F9F9FA] shadow-sm shadow-neutral-200/70 transition-shadow duration-300"
+              >
+                <div className="relative aspect-4/3 w-full overflow-hidden bg-neutral-100 group-hover:scale-105 transition-all duration-200">
+                  <Image
+                    src={src}
+                    alt={title}
+                    fill={true}
+                    className="mask-b-to-white object-cover transition-all duration-100"
+                  />
                 </div>
-              </div>
-              <div>
-                <Heading3 heading={title} className="mb-2 mt-4 text-lg font-semibold md:text-xl" />
-                <p className="text-neutral-600 text-[11px] md:text-base min-h-12 leading-5 tracking-tight">
-                  {description || "No description"}
-                </p>
-              </div>
-              {tools && tools.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {tools.map((tool, idx) => (
-                    <span key={idx} className="inline-flex items-center justify-center w-7 h-7">
-                      <Image src={tool} alt="tool" width={20} height={20} className="object-contain" />
-                    </span>
-                  ))}
-                </div>
-              )}
-              <div className="flex items-center justify-start mt-3">
-                <div className={clsx(
-                  "flex items-center gap-1 px-2 py-0.5 rounded-full shadow-sm",
-                  {
-                    "bg-green-100": status === "active",
-                    "bg-red-100": status === "not-active",
-                    "bg-blue-100": status === "development",
-                  }
-                )}
-                >
-                  <div className={clsx(
-                    "h-2 w-2 rounded-full",
-                    {
-                      "bg-green-700": status === "active",
-                      "bg-red-700": status === "not-active",
-                      "bg-blue-700": status === "development",
-                    }
-                  )
-                  }></div>
-                  <div className="text-[12px] text-neutral-600">
-                    {
-                      status === "active" ? <span>Active</span>
-                        :
-                        status === "not-active" ? <span>Not Active</span> : <span>Building</span>
-                    }
-
+                <div className="relative flex flex-1 flex-col justify-between px-3 py-5">
+                  <div className="absolute top-5 right-5">
+                    <div className="flex items-center gap-3">
+                      <Link href={github} target="black">
+                        <GithubIcon className="size-4" />
+                      </Link>
+                      <Link href={url} target="blank">
+                        <ExternalLinkIcon className="size-4" />
+                      </Link>
+                    </div>
+                  </div>
+                  <div>
+                    <Heading3
+                      heading={title}
+                      className="mt-4 mb-2 text-lg font-semibold md:text-xl"
+                    />
+                    <p className="min-h-12 text-[11px] leading-5 tracking-tight text-neutral-600 md:text-base">
+                      {description || "No description"}
+                    </p>
+                  </div>
+                  {tools && tools.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-1">
+                      {tools.map((tool, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex h-7 w-7 items-center justify-center"
+                        >
+                          <Image
+                            src={tool}
+                            alt="tool"
+                            width={20}
+                            height={20}
+                            className="object-contain"
+                          />
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="mt-3 flex items-center justify-start">
+                    <div
+                      className={clsx(
+                        "flex items-center gap-1 rounded-full px-2 py-0.5 shadow-sm",
+                        {
+                          "bg-green-100": status === "active",
+                          "bg-red-100": status === "not-active",
+                          "bg-blue-100": status === "development",
+                        },
+                      )}
+                    >
+                      <div
+                        className={clsx("h-2 w-2 rounded-full", {
+                          "bg-green-700": status === "active",
+                          "bg-red-700": status === "not-active",
+                          "bg-blue-700": status === "development",
+                        })}
+                      ></div>
+                      <div className="text-[12px] text-neutral-600">
+                        {status === "active" ? (
+                          <span>Active</span>
+                        ) : status === "not-active" ? (
+                          <span>Not Active</span>
+                        ) : (
+                          <span>Building</span>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
+            ),
+          )}
       </div>
     </Main>
   );
