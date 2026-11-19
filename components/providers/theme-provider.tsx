@@ -2,11 +2,12 @@
 
 import * as React from "react"
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes"
+import { isTypingTarget } from "../../lib/utils"
 
-function ThemeProvider({
+export const ThemeProvider = ({
   children,
   ...props
-}: React.ComponentProps<typeof NextThemesProvider>) {
+}: React.ComponentProps<typeof NextThemesProvider>) => {
   return (
     <NextThemesProvider
       attribute="class"
@@ -18,19 +19,6 @@ function ThemeProvider({
       <ThemeHotkey />
       {children}
     </NextThemesProvider>
-  )
-}
-
-function isTypingTarget(target: EventTarget | null) {
-  if (!(target instanceof HTMLElement)) {
-    return false
-  }
-
-  return (
-    target.isContentEditable ||
-    target.tagName === "INPUT" ||
-    target.tagName === "TEXTAREA" ||
-    target.tagName === "SELECT"
   )
 }
 
@@ -67,5 +55,3 @@ function ThemeHotkey() {
 
   return null
 }
-
-export { ThemeProvider }

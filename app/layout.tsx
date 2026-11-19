@@ -1,32 +1,49 @@
-import { Geist, Geist_Mono, Nunito_Sans, IBM_Plex_Sans } from "next/font/google"
+import { Geist_Mono, Nunito_Sans, IBM_Plex_Sans } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "cn"
+import { RootProvider } from "@/components/providers"
+import { Metadata } from "next"
 
-const ibmPlexSansHeading = IBM_Plex_Sans({subsets:['latin'],variable:'--font-heading'});
+const ibmPlexSansHeading = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-heading",
+})
 
-const nunitoSans = Nunito_Sans({subsets:['latin'],variable:'--font-sans'})
+const nunitoSans = Nunito_Sans({ subsets: ["latin"], variable: "--font-sans" })
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 })
 
-export default function RootLayout({
+export const metadata: Metadata = {
+  title: "Hariom Kashyap",
+  description: "",
+}
+
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode
-}>) {
+}>) => {
   return (
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", nunitoSans.variable, ibmPlexSansHeading.variable)}
+      className={cn(
+        "antialiased",
+        fontMono.variable,
+        "font-sans",
+        nunitoSans.variable,
+        ibmPlexSansHeading.variable
+      )}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body cz-shortcut-listen="false">
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   )
 }
+
+export default RootLayout
