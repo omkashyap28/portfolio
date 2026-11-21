@@ -4,6 +4,7 @@ import "./globals.css"
 import { cn } from "cn"
 import { RootProvider } from "@/components/providers"
 import { Metadata } from "next"
+import { ReactNode } from "react"
 
 const ibmPlexSansHeading = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -22,11 +23,11 @@ export const metadata: Metadata = {
   description: "",
 }
 
-const RootLayout = ({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) => {
+type Props = {
+  children: Readonly<ReactNode>
+}
+
+const RootLayout = ({ children }: Props) => {
   return (
     <html
       lang="en"
