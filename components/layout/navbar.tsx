@@ -24,8 +24,8 @@ const NAVIGATION_LINKS = [
 export const Navbar = () => {
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-9 h-14 w-full bg-transparent sm:top-3 sm:h-12">
-      <Container className="pointer-events-auto flex h-full items-center justify-between bg-background/20 backdrop-blur-sm sm:rounded-lg sm:border sm:px-2! sm:shadow">
-        <nav className="flex scroll-fade-r scrollbar-none items-center gap-x-3 overflow-auto pl-2 font-semibold sm:gap-x-5">
+      <Container className="pointer-events-auto flex h-full items-center justify-between bg-background/70 backdrop-blur-sm sm:rounded-lg sm:border sm:px-2! sm:shadow">
+        <nav className="flex scroll-fade-r scrollbar-none items-center gap-x-3 overflow-x-auto pl-2 font-semibold sm:gap-x-4">
           {NAVIGATION_LINKS.map(({ href, title }) => (
             <Link
               href={href}

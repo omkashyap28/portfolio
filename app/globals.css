@@ -124,6 +124,22 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-sans;
+    @apply font-sans scroll-fade-b;
   }
+  :root {
+    interpolate-size: allow-keywords;
+  }
+}
+
+
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: 
+    block-size 300ms ease,
+    content-visibilty 300ms allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto
 }

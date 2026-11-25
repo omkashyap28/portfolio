@@ -7,20 +7,18 @@ import { isTypingTarget } from "../../lib/utils"
 export const ThemeProvider = ({
   children,
   ...props
-}: React.ComponentProps<typeof NextThemesProvider>) => {
-  return (
-    <NextThemesProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-      {...props}
-    >
-      <ThemeHotkey />
-      {children}
-    </NextThemesProvider>
-  )
-}
+}: React.ComponentProps<typeof NextThemesProvider>) => (
+  <NextThemesProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+    {...props}
+  >
+    <ThemeHotkey />
+    {children}
+  </NextThemesProvider>
+)
 
 function ThemeHotkey() {
   const { resolvedTheme, setTheme } = useTheme()

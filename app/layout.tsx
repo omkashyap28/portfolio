@@ -19,7 +19,10 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Hariom Kashyap",
+  title: {
+    template: "%s - Hariom Kashyap",
+    default: "Home - Hariom Kashyap",
+  },
   description: "",
 }
 
